@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Courses - Pricing</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #0077b6;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 28px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+        }
+
+        .pricing-table {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            width: 300px;
+        }
+
+        .pricing-table:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-table img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .pricing-table h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            color: #0077b6;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            list-style-type: none;
+            margin-bottom: 30px;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .features li:hover {
+            background-color: #e0f7fa;
+            color: #0077b6;
+            border: 2px solid #0077b6;
+        }
+
+        .btn {
+            background-color: #0077b6;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #023e8a;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-table {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Web Development Courses</h1>
+    </div>
+    <div class="container">
+        <div class="pricing-table">
+            <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F998EFA4B5ABB7E9F0B" alt="HTML Course">
+            <h2>HTML Course</h2>
+            <div class="price">₹50</div>
+            <ul class="features">
+                <li>Basic HTML structure</li>
+                <li>Forms and inputs</li>
+                <li>Semantic HTML</li>
+                <li>Accessibility best practices</li>
+            </ul>
+            <button class="btn">Enroll Now</button>
+        </div>
+        <div class="pricing-table">
+            <img src="https://static.vecteezy.com/system/resources/previews/001/416/680/non_2x/css3-emblem-blue-shield-and-white-text-vector.jpg" alt="CSS Course">
+            <h2>CSS Course</h2>
+            <div class="price">₹75</div>
+            <ul class="features">
+                <li>CSS selectors and properties</li>
+                <li>Flexbox and Grid layouts</li>
+                <li>Responsive design</li>
+                <li>CSS animations</li>
+            </ul>
+            <button class="btn">Enroll Now</button>
+        </div>
+        <div class="pricing-table">
+            <img src="https://icon2.cleanpng.com/20180605/qhh/kisspng-javascript-programmer-node-js-web-application-vector-markup-language-5b173fc1a18d25.9262279015282503056617.jpg" alt="JavaScript Course">
+            <h2>JavaScript Course</h2>
+            <div class="price">₹100</div>
+            <ul class="features">
+                <li>JavaScript fundamentals</li>
+                <li>DOM manipulation</li>
+                <li>Asynchronous JavaScript</li>
+                <li>Modern ES6+ features</li>
+            </ul>
+            <button class="btn">Enroll Now</button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const courseName = this.parentElement.querySelector('h2').textContent;
+                const price = this.parentElement.querySelector('.price').textContent;
+                alert(`You've enrolled in the ${courseName} for ${price}!`);
+            });
+        });
+    </script>
+</body>
+</html>
